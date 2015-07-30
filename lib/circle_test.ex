@@ -13,7 +13,7 @@ defmodule CircleTest do
 	defp find_place(arr, start_at) when length(arr) > 1 do
 		current_last_item = List.last(arr)
 
-		ordered_array = Enum.with_index(arr)
+		ordered_array = Stream.with_index(arr)
 		|> Enum.filter(fn({_,i}) -> 
 		 	if start_at == 0, do: rem(i, 2) == 0, else: rem(i, 2) != 0
 		end)
